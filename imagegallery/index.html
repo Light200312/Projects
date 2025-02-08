@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <link rel="stylesheet" href="newstyle.css">
+</head>
+<body>
+    <div class="heading">
+                 <h1 >Personal Gallery</h1 ></div>
+
+    <div  class="imagebox" id="fullimg">
+    
+        <img id="imgid" src="https://imgs.search.brave.com/FtJ0f51iAzqo8bsJVqsJNiiH-LgnTHdYXOomJwCmL9w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/YS1kcm9wLW9mLXBp/bmstYW5kLXllbGxv/dy1wYWludC1pbi13/YXRlci5qcGc_d2lk/dGg9MTAwMCZmb3Jt/YXQ9cGpwZyZleGlm/PTAmaXB0Yz0w" alt="">
+        <span class="cross" onclick="closeimg()" id="cross">❌</span>
+        <span class="left" onclick="prev()" id="prev">◀</span>
+        <span class="right" onclick="next()" id="next">▶</span>
+    </div>
+    
+    <div class="gallery">
+        <div  class="photo"><img onclick="openfullimg(this.src)" class="tall" src="https://imgs.search.brave.com/FtJ0f51iAzqo8bsJVqsJNiiH-LgnTHdYXOomJwCmL9w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/YS1kcm9wLW9mLXBp/bmstYW5kLXllbGxv/dy1wYWludC1pbi13/YXRlci5qcGc_d2lk/dGg9MTAwMCZmb3Jt/YXQ9cGpwZyZleGlm/PTAmaXB0Yz0w" alt=""></div>
+        <div class="photo"><img  onclick="openfullimg(this.src)"    src="https://imgs.search.brave.com/g07Cqn91qiY1iGLsXUVHeEQM_peFSfnRPVRpIAXsNEc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzM4LzIwLzQ0/LzM2MF9GXzkzODIw/NDQ4MF81QlpQd1o0/ZEw1aXVqcjJYWnd6/a3hkRmVRSm9SRHNS/RS5qcGc" alt=""></div>
+        <div class="photo"><img  onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/VumJ_cTw2tyiJwRhee456A3MqGFEkMLAnp_dn1zRzn8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vc2xpZGVz/LzMxMzYzNDlmYjhl/YzRiZTRiNmU3NTI3/OGQ1MjEyZGVkLndl/YnA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/KJm5w-cbELGkNcYvZ6RLPOkg9y9vZK_xGQGWeDH31N8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I2L1BlbmNpbF9k/cmF3aW5nX29mX2Ff/Z2lybF9pbl9lY3N0/YXN5LmpwZw" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/8ExXYVb8oTB9fWM1IvIH-QRrnpIM5ifHCiXrTuchK-I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aXN0b2NrcGhvdG8u/Y29tL3Jlc291cmNl/cy9pbWFnZXMvSG9t/ZVBhZ2UvRm91clBh/Y2svQzItUGhvdG9z/LWlTdG9jay0xMzU2/MTk3Njk1LmpwZw" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/Y2rH-Z9a2_btluX3LhROUI7M7jGi_vhClrX3FnB4yVA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dGFubmVkLXNhbmQt/ZHVuZXMtc3Vycm91/bmRlZC1hbi1vcGVu/LXJlc2Vydm9pci5q/cGc_d2lkdGg9MTAw/MCZmb3JtYXQ9cGpw/ZyZleGlmPTAmaXB0/Yz0w" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/KrIBfwcMYTw5y8uMbjRLirmXFrIp_8-pxvdzPQ6-VX4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9nb3JnZW91cy1z/dW5zZXQtb3Zlci10/aGUtc2VhLWZyZWUt/aW1hZ2UuanBlZz9o/PTgwMCZxdWFsaXR5/PTgw" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/b125XPj0IJ95T1gKRAHX5zA7hGyi7dJ96p0VKcYyGGY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/VkLMsFTyCtmM4_5TrX5nYmUflAXeBUNLXBSH3DuAAS8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I2L0ltYWdlX2Ny/ZWF0ZWRfd2l0aF9h/X21vYmlsZV9waG9u/ZS5wbmc" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/QGZ2LRI0yRB6L9QDFWB20QOfva1A-ItiUHfvmlvKEd8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMy8x/MS8xNC8xNi8xNC9w/aW5lY29uZS04Mzg4/MDc0XzY0MC5qcGc" alt=""></div>
+        <div class="photo"> <img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/NyF01thquQ1Kb0esLKi2kfdeN48F2BNFySbux_jckIU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vc2xpZGVz/LzFmOWJlOWFiNDFm/MTQ5YzlhNzcwNWQ5/OTAwZTI2OGM3Lndl/YnA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/6k6HtqCtTh7p-diGuCA-DNpe3lk1DC1bpoymrVSUcus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0LzQ0LzEwLzQ2/LzM2MF9GXzQ0NDEw/NDY3OV84TFBieDQ3/enZaNEhCWnE3eHht/RkZieEU4azdxUTcx/aS5qcGc" alt=""></div>
+        <div class="photo" ><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/yUu30Ph5qfzF2nx0aw2tryoH3Nt3IHgb2NQCAw1UsoQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA5LzQ2LzgyLzU3/LzM2MF9GXzk0Njgy/NTc1Nl9qZGR2Mk5h/cGN0d0JXamxuSWxZ/dGFkVngzeHVPQk4w/Ti5qcGc" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/l3BDxLLjFGt67IttFIb8wMj8j06oLpmZADINBUL_4Bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/bGVuc2JhbGwteWVs/bG93LWFuZC1vcmFu/Z2UtbGlnaHRzLmpw/Zz93aWR0aD0xMDAw/JmZvcm1hdD1wanBn/JmV4aWY9MCZpcHRj/PTA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/XRhs9glfEUC_cdoAZ_iMGOnt9tfkGRKrhWlsDy3sTGk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvNzU3/ODg5L3BleGVscy1w/aG90by03NTc4ODku/anBlZz9hdXRvPWNv/bXByZXNzJmNzPXRp/bnlzcmdiJmRwcj0x/Jnc9NTAw" alt=""></div>
+        <div class="photo"><img class="tall" src="https://imgs.search.brave.com/FtJ0f51iAzqo8bsJVqsJNiiH-LgnTHdYXOomJwCmL9w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/YS1kcm9wLW9mLXBp/bmstYW5kLXllbGxv/dy1wYWludC1pbi13/YXRlci5qcGc_d2lk/dGg9MTAwMCZmb3Jt/YXQ9cGpwZyZleGlm/PTAmaXB0Yz0w" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/g07Cqn91qiY1iGLsXUVHeEQM_peFSfnRPVRpIAXsNEc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzM4LzIwLzQ0/LzM2MF9GXzkzODIw/NDQ4MF81QlpQd1o0/ZEw1aXVqcjJYWnd6/a3hkRmVRSm9SRHNS/RS5qcGc" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/VumJ_cTw2tyiJwRhee456A3MqGFEkMLAnp_dn1zRzn8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vc2xpZGVz/LzMxMzYzNDlmYjhl/YzRiZTRiNmU3NTI3/OGQ1MjEyZGVkLndl/YnA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/KJm5w-cbELGkNcYvZ6RLPOkg9y9vZK_xGQGWeDH31N8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I2L1BlbmNpbF9k/cmF3aW5nX29mX2Ff/Z2lybF9pbl9lY3N0/YXN5LmpwZw" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/8ExXYVb8oTB9fWM1IvIH-QRrnpIM5ifHCiXrTuchK-I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aXN0b2NrcGhvdG8u/Y29tL3Jlc291cmNl/cy9pbWFnZXMvSG9t/ZVBhZ2UvRm91clBh/Y2svQzItUGhvdG9z/LWlTdG9jay0xMzU2/MTk3Njk1LmpwZw" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/Y2rH-Z9a2_btluX3LhROUI7M7jGi_vhClrX3FnB4yVA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dGFubmVkLXNhbmQt/ZHVuZXMtc3Vycm91/bmRlZC1hbi1vcGVu/LXJlc2Vydm9pci5q/cGc_d2lkdGg9MTAw/MCZmb3JtYXQ9cGpw/ZyZleGlmPTAmaXB0/Yz0w" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/KrIBfwcMYTw5y8uMbjRLirmXFrIp_8-pxvdzPQ6-VX4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9nb3JnZW91cy1z/dW5zZXQtb3Zlci10/aGUtc2VhLWZyZWUt/aW1hZ2UuanBlZz9o/PTgwMCZxdWFsaXR5/PTgw" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/b125XPj0IJ95T1gKRAHX5zA7hGyi7dJ96p0VKcYyGGY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/VkLMsFTyCtmM4_5TrX5nYmUflAXeBUNLXBSH3DuAAS8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I2L0ltYWdlX2Ny/ZWF0ZWRfd2l0aF9h/X21vYmlsZV9waG9u/ZS5wbmc" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/QGZ2LRI0yRB6L9QDFWB20QOfva1A-ItiUHfvmlvKEd8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMy8x/MS8xNC8xNi8xNC9w/aW5lY29uZS04Mzg4/MDc0XzY0MC5qcGc" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/NyF01thquQ1Kb0esLKi2kfdeN48F2BNFySbux_jckIU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vc2xpZGVz/LzFmOWJlOWFiNDFm/MTQ5YzlhNzcwNWQ5/OTAwZTI2OGM3Lndl/YnA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/6k6HtqCtTh7p-diGuCA-DNpe3lk1DC1bpoymrVSUcus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0LzQ0LzEwLzQ2/LzM2MF9GXzQ0NDEw/NDY3OV84TFBieDQ3/enZaNEhCWnE3eHht/RkZieEU4azdxUTcx/aS5qcGc" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/yUu30Ph5qfzF2nx0aw2tryoH3Nt3IHgb2NQCAw1UsoQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA5LzQ2LzgyLzU3/LzM2MF9GXzk0Njgy/NTc1Nl9qZGR2Mk5h/cGN0d0JXamxuSWxZ/dGFkVngzeHVPQk4w/Ti5qcGc" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/l3BDxLLjFGt67IttFIb8wMj8j06oLpmZADINBUL_4Bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/bGVuc2JhbGwteWVs/bG93LWFuZC1vcmFu/Z2UtbGlnaHRzLmpw/Zz93aWR0aD0xMDAw/JmZvcm1hdD1wanBn/JmV4aWY9MCZpcHRj/PTA" alt=""></div>
+        <div class="photo"><img onclick="openfullimg(this.src)" src="https://imgs.search.brave.com/XRhs9glfEUC_cdoAZ_iMGOnt9tfkGRKrhWlsDy3sTGk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvNzU3/ODg5L3BleGVscy1w/aG90by03NTc4ODku/anBlZz9hdXRvPWNv/bXByZXNzJmNzPXRp/bnlzcmdiJmRwcj0x/Jnc9NTAw" alt=""></div>
+      
+
+
+
+    </div>
+    <div class="top"><img onclick="top1()" src="https://www.emoji.family/api/emojis/1f51d/noto/svg" alt=""></div>
+    <!-- <script>
+        let imgbox=document.getElementById('fullimg')
+        function openfullimg(src){
+         imgbox.style.display=flex;
+
+
+}
+    </script> -->
+    <script src="script.js"></script>
+</body>
+</html>

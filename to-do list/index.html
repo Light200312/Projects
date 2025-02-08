@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #212121;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        /* transition: background-color 0.3s, border-color 0.3s; */
+      }
+      .todocontainer {
+        /* border: 2px solid; */
+        background-color: #303030;
+        padding: 35px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        /* height: 300px; */
+        min-height: 400px;
+        min-width: 200px;
+        margin: 34px;
+        border-radius: 14px;
+        box-shadow: 0 4px 8px #212121;
+      }
+      h2 {
+        color: rgb(236, 146, 43);
+        font-weight: bolder;
+      }
+      .item {
+        /* transition: background-color 0.3s, border-color 0.3s; */
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        margin-bottom: 14px;
+        color: white;
+      }
+      .item input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 25px;
+        width: 25px;
+        /* color: #212121; */
+        position: relative;
+
+        background-color: beige;
+        border-radius: 4px;
+        margin-right: 14px;
+        cursor: pointer;
+      }
+      .item input:checked {
+        background-color: rgb(236, 146, 43);
+      }
+
+      .item input:checked::after {
+        content: "✔";
+        position: absolute;
+
+        /* Centering */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: 25px;
+        color: rgb(12, 10, 80);
+      }
+
+      .item input:checked + label {
+        text-decoration: line-through;
+        color: rgb(95, 95, 92);
+        /* font-weight: bolder; */
+      }
+      .item input:hover {
+        background-color: rgb(196, 196, 171);
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      .item label:hover {
+        color: #c3c3c3;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      #btn {
+        height: 50px;
+        width: 200px;
+        border-radius: 10px;
+        background-color: rgb(216, 120, 10);
+        cursor: pointer;
+        border: none;
+        color: white;
+        font-size: larger;
+        text-align: center;
+        font-weight: 700;
+      }
+      #btn:hover {
+        background-color: rgb(135, 83, 24);
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      .item input:checked:hover {
+        background-color: rgb(135, 83, 24);
+      }
+
+      .newtask {
+        display: flex;
+        justify-content: center;
+      }
+      #addtask {
+        background-color: #212121;
+        border-radius: 4px;
+        border: none;
+        height: 33px;
+        text-align: center;
+        margin-bottom: 25px;
+        color: #c3c3c3;
+      }
+      .hidden {
+        background-color: rgb(106, 75, 75);
+        text-align: center;
+        width: 24px;
+        height: 20px;
+        border-radius: 4px;
+        /* position: relative; */
+        display: block;margin-left: 4px;
+        padding-bottom: 4px;
+      }
+
+      .crosscont:hover .hidden {
+       background-color: rgb(209, 84, 84);
+
+       
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="todocontainer">
+      <h2>The TO-DO List</h2>
+      <div class="todoitems">
+        <div  id="id1" class="item">
+          <input type="checkbox" id="task1" />
+          <label for="task1">Do DBMS Hw.</label>
+          <div class="crosscont"><div onclick="removenode('id1')" class="hidden">✖ </div></div>
+        </div>
+        <div id="id2"  class="item">
+          <input type="checkbox" id="task2" />
+          <label for="task2">OS Practical.</label>
+          <div class="crosscont"><div onclick="removenode('id2')" class="hidden">✖ </div></div>
+        </div>
+        <div  id="id3" class="item">
+          <input type="checkbox" id="task3" />
+          <label for="task3">PAS lectueres.</label>
+          <div class="crosscont"><div onclick="removenode('id3')" class="hidden">✖ </div></div>
+        </div>
+        <div  id="id4" class="item">
+          <input type="checkbox" id="task4" />
+          <label for="task4">CAM lectures.</label>
+          <div class="crosscont"><div onclick="removenode('id4')" class="hidden">✖ </div></div>
+        </div>
+        <!-- <div class="newtask">
+                <input id="addtask" type="text" placeholder="ADD new task">
+            </div> -->
+      </div>
+      <div class="newtask">
+        <input
+          onkeydown="center(event)"
+          id="addtask"
+          type="text"
+          placeholder="ADD new task"
+        />
+      </div>
+
+      <button onclick="addtasknew()" id="btn">Save NEW Tasks</button>
+    </div>
+    <script>
+      let idc = 4;
+      let tid = "task";
+      let idn="id"
+      console.log(tid);
+
+      function addtasknew() {
+        let newtask = document.getElementById("addtask").value;
+        if (newtask == null || newtask == "") return;
+        idc += 1;
+        tid = "task" + idc;
+        idn='id' + idc;
+
+        let addition = ` <div  id="${idn}" class="item">
+                <input type="checkbox" id="${tid}" >
+                <label for="${tid}">${newtask}.</label>
+                <div class="crosscont"><div onclick="removenode('${idn}')" class="hidden">✖ </div></div>
+            </div>`;
+        document.querySelector(".todoitems").innerHTML += addition;
+      }
+      function center(event) {
+        if (event.key === "Enter") {
+          // ✅ Only trigger on Enter
+          event.preventDefault();
+          // Check if Enter is pressed
+          addtasknew();
+        }
+      }
+
+      function removenode(id){
+          document.getElementById(id).remove();
+      }
+      
+    </script>
+  </body>
+</html>

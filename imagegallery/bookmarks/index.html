@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .bookmark {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bookmark a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📌 Bookmark Manager</h2>
+
+    <input type="text" id="siteName" placeholder="Website Name">
+    <input type="text" id="siteURL" placeholder="Website URL (e.g., https://example.com)">
+    <button id="addBookmark">Add Bookmark</button>
+
+    <h3>📂 Your Bookmarks</h3>
+    <div id="bookmarkList"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadBookmarks();
+
+            document.getElementById("addBookmark").addEventListener("click", addBookmark);
+        });
+
+        function addBookmark() {
+            let siteName = document.getElementById("siteName").value;
+            let siteURL = document.getElementById("siteURL").value;
+
+            if (!siteName || !siteURL) {
+                alert("Please fill in both fields!");
+                return;
+            }
+
+            let bookmark = { name: siteName, url: siteURL };
+
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+            bookmarks.push(bookmark);
+            localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+
+            document.getElementById("siteName").value = "";
+            document.getElementById("siteURL").value = "";
+
+            loadBookmarks();
+        }
+
+        function loadBookmarks() {
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+            let bookmarkList = document.getElementById("bookmarkList");
+
+            bookmarkList.innerHTML = ""; // Clear previous content
+
+            bookmarks.forEach((bookmark, index) => {
+                let div = document.createElement("div");
+                div.classList.add("bookmark");
+                div.innerHTML = `
+                    <a href="${bookmark.url}" target="_blank">${bookmark.name}</a>
+                    <button class="delete-btn" data-index="${index}">Delete</button>
+                `;
+                bookmarkList.appendChild(div);
+            });
+
+            document.querySelectorAll(".delete-btn").forEach(button => {
+                button.addEventListener("click", deleteBookmark);
+            });
+        }
+
+        function deleteBookmark(event) {
+            let index = event.target.getAttribute("data-index");
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+            bookmarks.splice(index, 1);
+            localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+
+            loadBookmarks();
+        }
+    </script>
+
+</body>
+</html>
